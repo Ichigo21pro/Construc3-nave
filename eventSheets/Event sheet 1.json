@@ -1,5 +1,33 @@
 {
 	"name": "Event sheet 1",
-	"events": [],
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 171188110649708,
+					"parameters": {
+						"key": 32
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Nave",
+					"sid": 804537110468985,
+					"parameters": {
+						"object": "bala",
+						"layer": "0",
+						"image-point": "\"shoot\"",
+						"create-hierarchy": false
+					}
+				}
+			],
+			"sid": 719170200611147
+		}
+	],
 	"sid": 170892546186673
 }
