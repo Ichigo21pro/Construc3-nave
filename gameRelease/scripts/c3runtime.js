@@ -4361,7 +4361,8 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Acts.SetFlipped,
 		C3.Plugins.Sprite.Acts.SetMirrored,
 		C3.Behaviors.Bullet.Acts.SetAngleOfMotion,
-		C3.Behaviors.Bullet.Acts.SetSpeed
+		C3.Behaviors.Bullet.Acts.SetSpeed,
+		C3.Plugins.System.Cnds.CompareVar
 	];
 };
 self.C3_JsPropNameTable = [
@@ -4383,11 +4384,15 @@ self.C3_JsPropNameTable = [
 	{button: 0},
 	{Text: 0},
 	{Mouse: 0},
+	{Sprite: 0},
 	{score: 0},
 	{hayNaveActiva: 0},
 	{Recorrido: 0},
 	{SigueRecorrido: 0},
-	{VidaNavePlayer: 0}
+	{VidaNavePlayer: 0},
+	{siHayMeteoroActivo: 0},
+	{De1000en1000: 0},
+	{de2000en2000: 0}
 ];
 
 self.InstanceType = {
@@ -4401,7 +4406,8 @@ self.InstanceType = {
 	RecorridoText: class extends self.ITextInstance {},
 	button: class extends self.ISpriteInstance {},
 	Text: class extends self.ITextInstance {},
-	Mouse: class extends self.IInstance {}
+	Mouse: class extends self.IInstance {},
+	Sprite: class extends self.ISpriteInstance {}
 }
 }
 
@@ -4531,6 +4537,14 @@ self.C3_ExpressionFuncs = [
 			const v0 = p._GetNode(0).GetVar();
 			return () => and("VIDA: ", v0.GetValue());
 		},
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => (v0.GetValue() % 1000);
+		},
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => (v0.GetValue() % 2000);
+		},
 		() => 0,
 		() => 2720,
 		p => {
@@ -4543,8 +4557,10 @@ self.C3_ExpressionFuncs = [
 		},
 		() => "shoot",
 		() => 10,
+		() => 20,
 		() => -180,
-		() => 1300
+		() => 1300,
+		() => 3
 ];
 
 
