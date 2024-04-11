@@ -1,19 +1,19 @@
 {
-	"name": "Nave",
+	"name": "bala",
 	"plugin-id": "Sprite",
-	"sid": 948195524668194,
+	"sid": 229502044437597,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
-			"behaviorId": "EightDir",
-			"name": "8Direction",
-			"sid": 428773952544864
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 693631741343373
 		},
 		{
-			"behaviorId": "bound",
-			"name": "BoundToLayout",
-			"sid": 778099664849725
+			"behaviorId": "destroy",
+			"name": "DestroyOutsideLayout",
+			"sid": 225292436292137
 		}
 	],
 	"effectTypes": [],
@@ -22,27 +22,20 @@
 			{
 				"frames": [
 					{
-						"width": 170,
-						"height": 170,
+						"width": 1920,
+						"height": 1080,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1013545,
+						"imageSpriteId": 7945215,
 						"useCollisionPoly": true,
-						"imagePoints": [
-							{
-								"name": "shoot",
-								"x": 1.0529411764705883,
-								"y": 0.5
-							}
-						],
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 178055979671780,
+				"sid": 621987729486234,
 				"name": "Default",
 				"isLooping": false,
 				"isPingPong": false,
