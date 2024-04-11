@@ -12,6 +12,69 @@
 			"sid": 179537799818750
 		},
 		{
+			"eventType": "variable",
+			"name": "hayNaveActiva",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 645313201078330
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 906810070669716
+				}
+			],
+			"actions": [],
+			"sid": 990063776162677,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 340265617048208,
+							"parameters": {
+								"variable": "hayNaveActiva"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 500832359993209,
+							"parameters": {
+								"object-to-create": "DiseñoSinTítulo",
+								"layer": "0",
+								"x": "1000",
+								"y": "212",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 220847931340229,
+							"parameters": {
+								"variable": "hayNaveActiva",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 766311322927188
+				}
+			]
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -59,6 +122,11 @@
 						"instance-variable": "vida",
 						"value": "1"
 					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "bala",
+					"sid": 968583093460409
 				}
 			],
 			"sid": 432084339195657
@@ -91,9 +159,48 @@
 						"variable": "score",
 						"value": "10"
 					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 712955384157518,
+					"parameters": {
+						"variable": "hayNaveActiva",
+						"value": "false"
+					}
 				}
 			],
 			"sid": 782363878730497
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "DiseñoSinTítulo",
+					"sid": 767948662876909,
+					"parameters": {
+						"object": "LimitNave"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "DiseñoSinTítulo",
+					"sid": 746452144745048
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 631931064927440,
+					"parameters": {
+						"variable": "hayNaveActiva",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 853721844484971
 		},
 		{
 			"eventType": "block",
