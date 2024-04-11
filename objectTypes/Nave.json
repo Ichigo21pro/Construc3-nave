@@ -3,7 +3,15 @@
 	"plugin-id": "Sprite",
 	"sid": 948195524668194,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "VidaNave",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 173564496114158
+		}
+	],
 	"behaviorTypes": [
 		{
 			"behaviorId": "EightDir",

@@ -21,6 +21,13 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "Bullet",
 			"name": "Bullet",
@@ -56,7 +63,10 @@
 			"bala",
 			"Keyboard",
 			"DiseñoSinTítulo",
-			"LimitNave"
+			"LimitNave",
+			"ScoreText",
+			"VidaText",
+			"RecorridoText"
 		],
 		"subfolders": []
 	},

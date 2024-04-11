@@ -22,6 +22,26 @@
 			"sid": 645313201078330
 		},
 		{
+			"eventType": "variable",
+			"name": "Recorrido",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 813719061374326
+		},
+		{
+			"eventType": "variable",
+			"name": "SigueRecorrido",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 657202151586142
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -30,7 +50,16 @@
 					"sid": 906810070669716
 				}
 			],
-			"actions": [],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "ScoreText",
+					"sid": 960618210633730,
+					"parameters": {
+						"text": "\"SCORE: \"& score"
+					}
+				}
+			],
 			"sid": 990063776162677,
 			"children": [
 				{
@@ -71,6 +100,39 @@
 						}
 					],
 					"sid": 766311322927188
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 410423123934833,
+							"parameters": {
+								"variable": "SigueRecorrido"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 120145973258127,
+							"parameters": {
+								"variable": "Recorrido",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "RecorridoText",
+							"sid": 649862585381122,
+							"parameters": {
+								"text": "\"METROS: \"& Recorrido"
+							}
+						}
+					],
+					"sid": 300758697527252
 				}
 			]
 		},
@@ -231,10 +293,19 @@
 				{
 					"id": "set-angle-of-motion",
 					"objectClass": "DiseñoSinTítulo",
-					"sid": 574687862890472,
+					"sid": 597201167587728,
 					"behaviorType": "Bullet",
 					"parameters": {
 						"angle": "-180"
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "DiseñoSinTítulo",
+					"sid": 355657010053511,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"speed": "900"
 					}
 				}
 			],
