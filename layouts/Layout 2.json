@@ -37,8 +37,8 @@
 						}
 					},
 					"world": {
-						"x": 140,
-						"y": 203,
+						"x": 135.9019192678096,
+						"y": 186.6076770712383,
 						"width": 85,
 						"height": 85,
 						"originX": 0.5,
@@ -81,10 +81,70 @@
 						}
 					},
 					"world": {
-						"x": 190.66959658351462,
-						"y": 203.08678212361582,
+						"x": 13.086098188596026,
+						"y": -10.013415950286458,
 						"width": 27.73939781686184,
 						"height": 22.496288148573655,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "DiseñoSinTítulo",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 5,
+					"instanceVariables": {
+						"vida": 2
+					},
+					"behaviors": {},
+					"world": {
+						"x": 531.9429425477382,
+						"y": 199.0690336413058,
+						"width": 55.25373949866798,
+						"height": 49.10661840038233,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "LimitNave",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 6,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": -54,
+						"y": 484,
+						"width": 21,
+						"height": 1517,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

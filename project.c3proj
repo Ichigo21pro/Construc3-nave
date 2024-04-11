@@ -54,7 +54,9 @@
 		"items": [
 			"Nave",
 			"bala",
-			"Keyboard"
+			"Keyboard",
+			"DiseñoSinTítulo",
+			"LimitNave"
 		],
 		"subfolders": []
 	},

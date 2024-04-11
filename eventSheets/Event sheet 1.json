@@ -2,6 +2,16 @@
 	"name": "Event sheet 1",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "score",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 179537799818750
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -27,6 +37,63 @@
 				}
 			],
 			"sid": 719170200611147
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "bala",
+					"sid": 688976691549626,
+					"parameters": {
+						"object": "DiseñoSinTítulo"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "DiseñoSinTítulo",
+					"sid": 225250929776286,
+					"parameters": {
+						"instance-variable": "vida",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 432084339195657
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "DiseñoSinTítulo",
+					"sid": 692058214769496,
+					"parameters": {
+						"instance-variable": "vida",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "DiseñoSinTítulo",
+					"sid": 579590839784364
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 173046911285538,
+					"parameters": {
+						"variable": "score",
+						"value": "10"
+					}
+				}
+			],
+			"sid": 782363878730497
 		}
 	],
 	"sid": 170892546186673
