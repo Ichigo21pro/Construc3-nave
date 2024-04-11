@@ -106,12 +106,12 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 500832359993209,
+							"sid": 811987033810289,
 							"parameters": {
 								"object-to-create": "DiseñoSinTítulo",
 								"layer": "0",
-								"x": "1000",
-								"y": "212",
+								"x": "2720",
+								"y": "random(1405,140)",
 								"create-hierarchy": false,
 								"template-name": "\"\""
 							}
@@ -350,10 +350,10 @@
 				{
 					"id": "set-speed",
 					"objectClass": "DiseñoSinTítulo",
-					"sid": 355657010053511,
+					"sid": 874444874411656,
 					"behaviorType": "Bullet",
 					"parameters": {
-						"speed": "900"
+						"speed": "1300"
 					}
 				}
 			],
