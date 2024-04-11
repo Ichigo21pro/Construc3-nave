@@ -110,10 +110,22 @@
 					"instanceVariables": {
 						"vida": 2
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Bullet": {
+							"properties": {
+								"speed": 400,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": true,
+								"step": false,
+								"enabled": true
+							}
+						}
+					},
 					"world": {
-						"x": 531.9429425477382,
-						"y": 199.0690336413058,
+						"x": 288,
+						"y": 188,
 						"width": 55.25373949866798,
 						"height": 49.10661840038233,
 						"originX": 0.5,

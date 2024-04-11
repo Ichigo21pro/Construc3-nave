@@ -94,6 +94,44 @@
 				}
 			],
 			"sid": 782363878730497
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "DiseñoSinTítulo",
+					"sid": 832961474574340
+				}
+			],
+			"actions": [
+				{
+					"id": "set-flipped",
+					"objectClass": "DiseñoSinTítulo",
+					"sid": 555509210298970,
+					"parameters": {
+						"state": "flipped"
+					}
+				},
+				{
+					"id": "set-mirrored",
+					"objectClass": "DiseñoSinTítulo",
+					"sid": 595384220272694,
+					"parameters": {
+						"state": "mirrored"
+					}
+				},
+				{
+					"id": "set-angle-of-motion",
+					"objectClass": "DiseñoSinTítulo",
+					"sid": 574687862890472,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"angle": "-180"
+					}
+				}
+			],
+			"sid": 308611658094297
 		}
 	],
 	"sid": 170892546186673
