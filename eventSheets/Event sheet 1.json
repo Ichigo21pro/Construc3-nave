@@ -42,6 +42,16 @@
 			"sid": 657202151586142
 		},
 		{
+			"eventType": "variable",
+			"name": "VidaNavePlayer",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 207136748411599
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -57,6 +67,23 @@
 					"sid": 960618210633730,
 					"parameters": {
 						"text": "\"SCORE: \"& score"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 776288351031661,
+					"parameters": {
+						"variable": "VidaNavePlayer",
+						"value": "Nave.VidaNave"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "VidaText",
+					"sid": 801440521465823,
+					"parameters": {
+						"text": "\"VIDA: \"& VidaNavePlayer"
 					}
 				}
 			],
@@ -133,6 +160,27 @@
 						}
 					],
 					"sid": 300758697527252
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 310528471823533
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "RecorridoText",
+							"sid": 870770493223491,
+							"parameters": {
+								"text": "\"METROS: \"& Recorrido"
+							}
+						}
+					],
+					"sid": 445762485075838
 				}
 			]
 		},
@@ -310,6 +358,98 @@
 				}
 			],
 			"sid": 308611658094297
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Nave",
+					"sid": 389342124071258,
+					"parameters": {
+						"object": "DiseñoSinTítulo"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "DiseñoSinTítulo",
+					"sid": 411478963556546
+				},
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "Nave",
+					"sid": 509162168578227,
+					"parameters": {
+						"instance-variable": "VidaNave",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 501489512475534,
+					"parameters": {
+						"variable": "hayNaveActiva",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 881602859677863
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Nave",
+					"sid": 460932882746452,
+					"parameters": {
+						"instance-variable": "VidaNave",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Nave",
+					"sid": 668837966400107
+				},
+				{
+					"id": "destroy",
+					"objectClass": "DiseñoSinTítulo",
+					"sid": 973617051604620
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 578125397580303,
+					"parameters": {
+						"variable": "SigueRecorrido",
+						"value": "false"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 413206377791086,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 757812216109986,
+					"parameters": {
+						"layout": "Layout 3"
+					}
+				}
+			],
+			"sid": 733740438127856
 		}
 	],
 	"sid": 170892546186673
