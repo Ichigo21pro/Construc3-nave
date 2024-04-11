@@ -12,7 +12,7 @@
 						"text": "Text",
 						"enable-bbcode": true,
 						"font": "Arial",
-						"size": 16.199999999999992,
+						"size": 61.90000000000003,
 						"line-height": 0,
 						"bold": true,
 						"italic": false,
@@ -37,8 +37,8 @@
 					"world": {
 						"x": 327,
 						"y": 168,
-						"width": 200,
-						"height": 30,
+						"width": 993,
+						"height": 215,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -57,7 +57,7 @@
 						"text": "Text",
 						"enable-bbcode": true,
 						"font": "Arial",
-						"size": 16.199999999999992,
+						"size": 68.29999999999997,
 						"line-height": 0,
 						"bold": true,
 						"italic": false,
@@ -80,10 +80,10 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 326,
-						"y": 224,
-						"width": 200,
-						"height": 30,
+						"x": 450,
+						"y": 439,
+						"width": 759,
+						"height": 235,
 						"originX": 0,
 						"originY": 0,
 						"color": [
