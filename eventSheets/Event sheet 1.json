@@ -294,6 +294,18 @@
 						"image-point": "\"shoot\"",
 						"create-hierarchy": false
 					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 421374254277416,
+					"parameters": {
+						"audio-file": "shoot",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
 				}
 			],
 			"sid": 719170200611147
@@ -374,6 +386,18 @@
 			],
 			"actions": [
 				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 489193074725782,
+					"parameters": {
+						"audio-file": "explode",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
 					"id": "destroy",
 					"objectClass": "DiseñoSinTítulo",
 					"sid": 579590839784364
@@ -414,6 +438,18 @@
 				}
 			],
 			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 408450706766511,
+					"parameters": {
+						"audio-file": "explode",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
 				{
 					"id": "destroy",
 					"objectClass": "Sprite",
@@ -608,6 +644,18 @@
 			],
 			"actions": [
 				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 540122093007038,
+					"parameters": {
+						"audio-file": "explode",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
 					"id": "destroy",
 					"objectClass": "DiseñoSinTítulo",
 					"sid": 411478963556546
@@ -646,6 +694,18 @@
 				}
 			],
 			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 765541724429532,
+					"parameters": {
+						"audio-file": "explode",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
 				{
 					"id": "destroy",
 					"objectClass": "Sprite",
