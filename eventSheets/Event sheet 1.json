@@ -117,6 +117,19 @@
 							}
 						},
 						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 615053609648904,
+							"parameters": {
+								"object-to-create": "DiseñoSinTítulo",
+								"layer": "0",
+								"x": "2720",
+								"y": "random(1405,140)",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
 							"sid": 220847931340229,

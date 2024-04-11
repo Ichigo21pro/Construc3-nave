@@ -4224,6 +4224,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Acts.SetVar,
 		C3.Plugins.System.Cnds.CompareBoolVar,
 		C3.Plugins.System.Acts.CreateObject,
+		C3.Plugins.System.Exps.random,
 		C3.Plugins.System.Acts.SetBoolVar,
 		C3.Plugins.System.Acts.AddVar,
 		C3.Plugins.System.Cnds.Else,
@@ -4386,8 +4387,11 @@ self.C3_ExpressionFuncs = [
 			return () => and("VIDA: ", v0.GetValue());
 		},
 		() => 0,
-		() => 1000,
-		() => 212,
+		() => 2720,
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			return () => f0(1405, 140);
+		},
 		() => "",
 		() => 1,
 		p => {
@@ -4397,7 +4401,7 @@ self.C3_ExpressionFuncs = [
 		() => "shoot",
 		() => 10,
 		() => -180,
-		() => 900
+		() => 1300
 ];
 
 
