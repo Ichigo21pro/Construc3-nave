@@ -52,6 +52,16 @@
 			"sid": 207136748411599
 		},
 		{
+			"eventType": "variable",
+			"name": "siHayMeteoroActivo",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 812342845722579
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -200,19 +210,6 @@
 							}
 						},
 						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 615053609648904,
-							"parameters": {
-								"object-to-create": "DiseñoSinTítulo",
-								"layer": "0",
-								"x": "2720",
-								"y": "random(1405,140)",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
 							"sid": 220847931340229,
@@ -223,6 +220,45 @@
 						}
 					],
 					"sid": 766311322927188
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 202484698334888,
+							"parameters": {
+								"variable": "siHayMeteoroActivo"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 418476575274913,
+							"parameters": {
+								"object-to-create": "Sprite",
+								"layer": "0",
+								"x": "2720",
+								"y": "random(1405,140)",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 277611017500166,
+							"parameters": {
+								"variable": "siHayMeteoroActivo",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 930030892482568
 				},
 				{
 					"eventType": "block",
@@ -341,6 +377,36 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "bala",
+					"sid": 850091339384778,
+					"parameters": {
+						"object": "Sprite"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "Sprite",
+					"sid": 290195684266743,
+					"parameters": {
+						"instance-variable": "vida",
+						"value": "1"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "bala",
+					"sid": 427043107701546
+				}
+			],
+			"sid": 711839363901421
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "compare-instance-variable",
 					"objectClass": "DiseñoSinTítulo",
 					"sid": 692058214769496,
@@ -382,6 +448,47 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "compare-instance-variable",
+					"objectClass": "Sprite",
+					"sid": 674294789886791,
+					"parameters": {
+						"instance-variable": "vida",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Sprite",
+					"sid": 977499277540677
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 202298439586720,
+					"parameters": {
+						"variable": "score",
+						"value": "20"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 392841849288317,
+					"parameters": {
+						"variable": "siHayMeteoroActivo",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 956514146162409
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "on-collision-with-another-object",
 					"objectClass": "DiseñoSinTítulo",
 					"sid": 767948662876909,
@@ -407,6 +514,36 @@
 				}
 			],
 			"sid": 853721844484971
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Sprite",
+					"sid": 799041112008053,
+					"parameters": {
+						"object": "LimitNave"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Sprite",
+					"sid": 149269817522073
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 355381261127771,
+					"parameters": {
+						"variable": "siHayMeteoroActivo",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 708448935830643
 		},
 		{
 			"eventType": "block",
@@ -459,6 +596,53 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "on-created",
+					"objectClass": "Sprite",
+					"sid": 260733596565127
+				}
+			],
+			"actions": [
+				{
+					"id": "set-flipped",
+					"objectClass": "Sprite",
+					"sid": 513853814251702,
+					"parameters": {
+						"state": "flipped"
+					}
+				},
+				{
+					"id": "set-mirrored",
+					"objectClass": "Sprite",
+					"sid": 972320607723316,
+					"parameters": {
+						"state": "mirrored"
+					}
+				},
+				{
+					"id": "set-angle-of-motion",
+					"objectClass": "Sprite",
+					"sid": 846355729008840,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"angle": "-180"
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "Sprite",
+					"sid": 457579466743122,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"speed": "1300"
+					}
+				}
+			],
+			"sid": 543420446578503
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "on-collision-with-another-object",
 					"objectClass": "Nave",
 					"sid": 389342124071258,
@@ -493,6 +677,45 @@
 				}
 			],
 			"sid": 881602859677863
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Nave",
+					"sid": 193504483133601,
+					"parameters": {
+						"object": "Sprite"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Sprite",
+					"sid": 138503306141398
+				},
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "Nave",
+					"sid": 235024933517105,
+					"parameters": {
+						"instance-variable": "VidaNave",
+						"value": "3"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 708032650506097,
+					"parameters": {
+						"variable": "siHayMeteoroActivo",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 305518571484242
 		},
 		{
 			"eventType": "block",
@@ -546,6 +769,37 @@
 				}
 			],
 			"sid": 733740438127856
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 196795458533106,
+					"parameters": {
+						"variable": "Recorrido",
+						"comparison": 0,
+						"value": "500"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 624484393522476,
+					"parameters": {
+						"object-to-create": "DiseñoSinTítulo",
+						"layer": "0",
+						"x": "2720",
+						"y": "random(1405,140)",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				}
+			],
+			"sid": 171594739894955
 		}
 	],
 	"sid": 170892546186673

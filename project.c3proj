@@ -83,7 +83,8 @@
 			"RecorridoText",
 			"button",
 			"Text",
-			"Mouse"
+			"Mouse",
+			"Sprite"
 		],
 		"subfolders": []
 	},
