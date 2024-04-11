@@ -62,6 +62,26 @@
 			"sid": 812342845722579
 		},
 		{
+			"eventType": "variable",
+			"name": "De1000en1000",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 103220900472910
+		},
+		{
+			"eventType": "variable",
+			"name": "de2000en2000",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 983886867861167
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -177,6 +197,24 @@
 					"sid": 801440521465823,
 					"parameters": {
 						"text": "\"VIDA: \"& VidaNavePlayer"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 336278532765716,
+					"parameters": {
+						"variable": "De1000en1000",
+						"value": "Recorrido%1000"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 101401654740637,
+					"parameters": {
+						"variable": "de2000en2000",
+						"value": "Recorrido%2000"
 					}
 				}
 			],
@@ -776,11 +814,11 @@
 				{
 					"id": "compare-eventvar",
 					"objectClass": "System",
-					"sid": 196795458533106,
+					"sid": 488612630833523,
 					"parameters": {
-						"variable": "Recorrido",
+						"variable": "De1000en1000",
 						"comparison": 0,
-						"value": "500"
+						"value": "int(0)"
 					}
 				}
 			],
@@ -800,6 +838,37 @@
 				}
 			],
 			"sid": 171594739894955
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 798039309708476,
+					"parameters": {
+						"variable": "de2000en2000",
+						"comparison": 0,
+						"value": "int(0)"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 297877488337925,
+					"parameters": {
+						"object-to-create": "Sprite",
+						"layer": "0",
+						"x": "2720",
+						"y": "random(1405,140)",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				}
+			],
+			"sid": 239301787439169
 		}
 	],
 	"sid": 170892546186673
